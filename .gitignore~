@@ -8,19 +8,7 @@
 #
 # Corrections? Improvements? Create a GitHub issue:
 # http://github.com/RailsApps/rails-composer/issues
-#
 #----------------------------------------------------------------------------
-
-# Copy over from PP1
-.bundle
-db/*.sqlite3
-log/*.log
-tmp/
-.sass-cache/
-*.komodoedit
-*.komodoproject
-*.idea
-Gemfile.lock
 
 # bundler state
 /.bundle
