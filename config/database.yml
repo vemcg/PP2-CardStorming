@@ -19,7 +19,7 @@ development:
   database: PP2-CardStorming_development
   pool:     5
   username: PP2-CardStorming
-  password:
+  password: glennholt
   template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -47,7 +47,7 @@ test:
   database: PP2-CardStorming_test
   pool:     5
   username: PP2-CardStorming
-  password:
+  password: glennholt
   template: template0
 
 production:
@@ -57,5 +57,5 @@ production:
   database: PP2-CardStorming_production
   pool:     5
   username: PP2-CardStorming
-  password:
+  password: glennholt
   template: template0
