@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card Storming</title>
+    <!-- data-main attribute tells require.js to load
+         scripts/main.js after require.js loads. -->
+    <script data-main="assets/javascripts/main" src="assets/vendor/require.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+
+/////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////
+
+
+function addStudent(){
+ // add node here
+  var num1 = $("#num1").val();
+  var num2 = $("#num2").val();
+  //var datePickerBegin = 
+ // alert("addStudent"+a);
+  if(num1!=""  && num2 !=""   ){
+  	var output =   parseInt(num1)+ parseInt(num2);
+    var node   = "<li>" + num1 + " + " + num2+ " = "+  output+ "</li>";
+  
+  alert("node="+node);
+  $("#orderedList").append(node); 
+  $("#num1").val("");
+  $("#num2").val("");
+}else{
+	alert("please Enter non-blank entries")
+}
+ // $("#name").append(node); 
+  //$(html).find('li').appendTo('ol')
+
+  //$('li:last').append(node);
+}
+function deleteStudent(){
+	$("#orderedList li:last").remove();
+	// This is what Rajiv used:  $("#orderedList").children().last().remove();
+}
+function clearAllStudent(){
+  $("#orderedList").children().remove();
+}
+$(document).ready(function(){
+  $("#btnAdd").click(addStudent);
+  $("#btnDelete").click(deleteStudent);
+  $("#btnClear").click(clearAllStudent);
+  $(".positive_integer_only").keyup(function () {     
+  this.value = this.value.replace(/[^1-9]/g,'');
+});
+
+ // $("datepicker start").datepicker();
+ // $("datepicker start").datepicker();
+
+ });
+
+
+
+
+
+///////////////////////////////////////////////////////////
+</script>
+</head>
+<body>
+<h1>My Sample Project</h1> 
+<input id="num1" class="positive_integer_only">
+<input id="num2" class="positive_integer_only">
+<button id="btnAdd">Add</button>
+<div id="answer">
+	<h1> The Answers</h1>
+<ul id="orderedList">
+	
+</ul>
+</div>
+</body>
+</html>

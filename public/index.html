@@ -1,64 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Card Storming</title>
-    <!-- data-main attribute tells require.js to load
-         scripts/main.js after require.js loads. -->
-    <script data-main="assets/javascripts/main" src="assets/vendor/require.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Why AMD?</title>
+		<meta name="description" content="Why AMD?" />
+		<meta name="author" content="Cary Landholt" />
 
-/////////////////////////////////////////////////////////
-function addStudent(){
- // add node here
-  var num1 = $("#num1").val();
-  var num2 = $("#num2").val();
-  //var datePickerBegin = 
- // alert("addStudent"+a);
-  if(num1!=""  && num2 !=""   ){
-  	var output =   parseInt(num1)+ parseInt(num2);
-    var node   = "<li>" + num1 + " + " + num2+ " = "+  output+ "</li>";
-  
-  alert("node="+node);
-  $("#orderedList").append(node); 
-  $("#num1").val("");
-  $("#num2").val("");
-}else{
-	alert("please Enter non-blank entries")
-}
- // $("#name").append(node); 
-  //$(html).find('li').appendTo('ol')
-
-  //$('li:last').append(node);
-}
-function deleteStudent(){
-	$("#orderedList li:last").remove();
-	// This is what Rajiv used:  $("#orderedList").children().last().remove();
-}
-function clearAllStudent(){
-  $("#orderedList").children().remove();
-}
-$(document).ready(function(){
-  $("#btnAdd").click(addStudent);
-  $("#btnDelete").click(deleteStudent);
-  $("#btnClear").click(clearAllStudent);
- // $("datepicker start").datepicker();
- // $("datepicker start").datepicker();
-
- });
-
-
-
-
-
-///////////////////////////////////////////////////////////
+		<style>
+			html * {
+				font-size: 100%;
+			}
+		</style>
+<script data-main="assets/vendor/app" src="assets/require.js">
 </script>
-</head>
-<body>
-<h1>My Sample Project</h1> 
-<input id="num1">
-<input id="num2">
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="content">
+			<div class="hero-unit">
+				<h1>Why AMD THIS CANNOT BE!!!!?</h1>
+				<p>Asynchronous Module Definition</p>
+			</div>
+				
+<input id="num1" class="positive_integer_only">
+<input id="num2" class="positive_integer_only">
 <button id="btnAdd">Add</button>
 <div id="answer">
 	<h1> The Answers</h1>
@@ -66,5 +32,7 @@ $(document).ready(function(){
 	
 </ul>
 </div>
-</body>
+			</div>
+		</div>
+	</body>
 </html>
