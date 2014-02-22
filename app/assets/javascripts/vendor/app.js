@@ -1,4 +1,4 @@
-require(['calculator/subtract', 'calculator/square','jquery'], function (sub, sq,$) {
+require(['calculator/subtract', 'calculator/square','students/add','jquery'], function (sub, sq,addstudx,$) {
 	console.log(sub(18,5));
 	
 	console.log(sq(11));
@@ -39,7 +39,8 @@ function clearAllStudent(){
   $("#orderedList").children().remove();
 }
 $(document).ready(function(){
-  $("#btnAdd").click(addStudent);
+  //$("#btnAdd").click(addStudent);
+  $("#btnAdd").click(addstudx);
   $("#btnDelete").click(deleteStudent);
   $("#btnClear").click(clearAllStudent);
   $(".positive_integer_only").keyup(function () {     
