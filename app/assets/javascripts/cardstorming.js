@@ -1,3 +1,4 @@
+debugger;
 require.config({
     baseUrl: 'javascripts',
     paths: {
@@ -13,8 +14,12 @@ require.config({
     }
 });
 
-debug;
+debugger;
 require (["sample", "jquery"],
-function (sample) { "use strict"
-    sample.sayHello();
-});
+    function (sample) { "use strict"
+
+        $(document).ready(function () {
+            sample.sayHello();
+        });
+
+    });
