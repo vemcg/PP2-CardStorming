@@ -17,12 +17,13 @@
 });
 */
 //debugger;
-  require (["app", "jquery"],
-    function (app) { "use strict"
+  require (["app", "SayHelloapp", "jquery"],
+    function (app, SayHelloapp) { "use strict"
 
         $(document).ready(function () {
-            //app.sayHello();
-            app.init();
+             SayHelloapp.sayHello();
+             app.init();
+
         });
 
   });
