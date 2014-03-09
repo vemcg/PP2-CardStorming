@@ -7,6 +7,7 @@ require ([
         var CLASS_CONSTANT = 42;
         var classVariable = 84;
         function SampleInstance () {
+            var publicVariable;
             var publicInstanceMethod;
             var privateInstanceVariable;
             function privateMessage () {
@@ -26,11 +27,12 @@ require ([
             this.publicMethod = publicMethod;
             this.sayHello = sayHello;
         }
-        debug;
+        debugger;
         return SampleInstance;
     }());
     // Choose either:
-    return new SampleConstructor(); // Returns and instance of SampleInstance (a singleton)
+    var instance = new SampleConstructor(); // Returns an instance of SampleInstance (a singleton)
+    return instance;
     // return SampleConstructor; // Returns SampleConstructor (a Constructor for multiple instances)
 });
 
