@@ -1,4 +1,4 @@
-define(['calculator/subtract','students/add','jquery'], 
+define(['calculator/subtract','students/add','jquery'],
 function (sub, addstudx,$) { "use strict"
     var AppConstructor = (function () {
         var CLASS_CONSTANT = 42;
