@@ -13,10 +13,10 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                 function init() {
                     var infoIn = {str : 'infoIn string'};
                     function t1 (info) {
-                        logger.log('T1: info.str = ' = info.str);
+                        logger.log('T1: info.str = ' + info.str);
                     }
                     function t2(info) {
-                        logger.log('T2: info.str = ' = info.str);
+                        logger.log('T2: info.str = ' + info.str);
                     }
                     logger.log('Hello raw Log from ViewportView');
 

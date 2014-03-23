@@ -1,15 +1,14 @@
 define(['core/Log'],
     function (logger) { "use strict"
-        var EventDispatcherConstructor;
-        EventDispatcherConstructor = (function () {
+        var EventDispatcher = (function () {
 
-            function EventDispatcherInstance() {
+            function EventDispatcher() {
 
                 var LOG_LEVEL = 1;
-                var events = {};
+                var registeredEvents = {};
 
                 function log (level, message) {
-                    if (LOG_LEVEL <== level) {
+                    if (LOG_LEVEL <= level) {
                         logger.log (message);
                     }
                 }
@@ -30,25 +29,25 @@ define(['core/Log'],
                     list.push(item);
                 }
                 function on(eventName, callback) {
-                    if (!events.hasOwnProperty(eventName)) {
-                        events[eventName] = [];
+                    if (!registeredEvents.hasOwnProperty(eventName)) {
+                        registeredEvents[eventName] = [];
                     }
-                    remove(events[eventName], callback);   // Callback can only be listed once ...
-                    append(events[eventName], callback);   // ... at the end of the list.
+                    remove(registeredEvents[eventName], callback);   // Callback can only be listed once ...
+                    append(registeredEvents[eventName], callback);   // ... at the end of the list.
                 }
 
                 function off(eventName, callback) {
-                    if (!events.hasOwnProperty(eventName)) {
-                        events[eventName] = [];
+                    if (!registeredEvents.hasOwnProperty(eventName)) {
+                        registeredEvents[eventName] = [];
                     }
-                    remove(events[eventName], callback);   // Remove callback if present
+                    remove(registeredEvents[eventName], callback);   // Remove callback if present
                 }
 
                 function fire(eventName, eventInfo) {
                     var i, n, list;
 
-                    if (event.hasOwnProperty(eventName)) {
-                        list = events[eventName];
+                    if (registeredEvents.hasOwnProperty(eventName)) {
+                        list = registeredEvents[eventName];
                         n = list.length;
 
                         if (0 < n) {
@@ -68,8 +67,8 @@ define(['core/Log'],
                 this.off = off;
                 this.fire = fire;
             }   // End of Instance
-            return EventDispatcherInstance;
+            return EventDispatcher;
         }()); // End of Class
 
-        return new EventDispatcherInstance();
+        return new EventDispatcher();
     });

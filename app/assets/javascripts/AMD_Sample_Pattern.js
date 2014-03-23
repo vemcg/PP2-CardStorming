@@ -1,6 +1,6 @@
 define(['path/to/xxx','path/to/yyy','jquery'],
     function (xxx, yyy,$) { "use strict"
-        var SampleConstructor = (function () {
+        var Sample = (function () {
             var CLASS_CONSTANT = 42;
             var classVariable = 84;
 
@@ -28,6 +28,6 @@ define(['path/to/xxx','path/to/yyy','jquery'],
         } ()); // End of Class
 
         // Choose either:
-        return new Sample(); // Returns and instance of SampleInstance (a singleton)
-        // return Sample; // Returns SampleInstance (a Constructor for multiple instances)
+        return new Sample(); // Returns an instance of Sample (a singleton)
+        // return Sample; // Returns Sample (a Constructor for multiple instances)
     });
