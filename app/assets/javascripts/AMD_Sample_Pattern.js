@@ -4,7 +4,7 @@ define(['path/to/xxx','path/to/yyy','jquery'],
             var CLASS_CONSTANT = 42;
             var classVariable = 84;
 
-            function SampleInstance () {
+            function Sample () {
                 var publicInstanceMethod;
                 var privateInstanceVariable;
 
@@ -23,11 +23,11 @@ define(['path/to/xxx','path/to/yyy','jquery'],
                 this.publicVariable = publicVariable;
                 this.publicMethod = publicMethod;
                 this.init = init;
-            }   // End of SampleInstance
-            return SampleInstance;
-        } ()); // End of SampleClass
+            }   // End of Instance
+            return Sample;
+        } ()); // End of Class
 
         // Choose either:
-        return new SampleInstance(); // Returns and instance of SampleInstance (a singleton)
-        // return SampleInstance; // Returns SampleInstance (a Constructor for multiple instances)
+        return new Sample(); // Returns and instance of SampleInstance (a singleton)
+        // return Sample; // Returns SampleInstance (a Constructor for multiple instances)
     });

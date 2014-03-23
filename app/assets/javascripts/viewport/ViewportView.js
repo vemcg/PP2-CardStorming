@@ -1,33 +1,41 @@
-define(['path/to/xxx','path/to/yyy','jquery'],
-    function (xxx, yyy,$) { "use strict"
-        var SampleConstructor = (function () {
-            var CLASS_CONSTANT = 42;
-            var classVariable = 84;
+define(['core/EventDispatcher', 'core/Log', 'jquery'],
+    function (dispatcher, logger) { "use strict"
+        var ViewportView = (function () { // Start of Constructor
 
-            function SampleInstance () {
-                var publicInstanceMethod;
-                var privateInstanceVariable;
+            function ViewportView () {
 
-                function privateMethod () {
+                function pause () {
 
                 }
-                function publicMethod () {
+                function resume () {
 
                 }
-
                 function init() {
+                    var infoIn = {str : 'infoIn string'};
+                    function t1 (info) {
+                        logger.log('T1: info.str = ' = info.str);
+                    }
+                    function t2(info) {
+                        logger.log('T2: info.str = ' = info.str);
+                    }
+                    logger.log('Hello raw Log from ViewportView');
 
+                    dispatcher.on('test', t1);
+                    dispatcher.on('test', t2);
+                    dispatcher.on('test', t1);
+
+                    dispatcher.fire ('test', infoIn);
+
+                    alert("Made it to ViewportView init()");
                 }
 
                 // Public Interface
-                this.publicVariable = publicVariable;
-                this.publicMethod = publicMethod;
+                this.pause = pause;
+                this.resume = resume;
                 this.init = init;
-            }   // End of SampleInstance
-            return SampleInstance;
-        } ()); // End of SampleClass
+            }   // End of Instance
+            return ViewportView;
+        } ()); // End of Constructor
 
-        // Choose either:
-        return new SampleInstance(); // Returns and instance of SampleInstance (a singleton)
-        // return SampleInstance; // Returns SampleInstance (a Constructor for multiple instances)
+        return new ViewportView();
     });
