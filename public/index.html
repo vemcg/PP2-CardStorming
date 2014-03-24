@@ -7,10 +7,29 @@
 			html * {
 				font-size: 100%;
 			}
+            #banner {
+                height:  100px;
+                width: 100%;
+                background-color: #ddddff;
+            }
+            #viewport {
+                height: 800px;
+                width: 75%;
+                float: left;
+                background-color: #ffddff;
+            }
+            #palette {
+                height: 800px;
+                width: 25%;
+                float: right;
+                background-color: #ffdddd;
+            }
             .card {
-                height: 15em;
-                width: 25em;
+                /* position: absolute; */
+                height: 6em;
+                width: 10em;
                 background-color: yellow;
+                border: black 0.1em solid;
             }
 		</style>
         <script data-main="assets/main" src="assets/require.js">
@@ -28,6 +47,9 @@
             <div id="palette">
                 blank palette
             </div>
+        </div>
+        <div id="cardstock">
+            <div id="TBD" class="card"></div>
         </div>
 	</body>
 </html>

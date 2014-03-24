@@ -4,6 +4,29 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
 
             function ViewportView () {
 
+                var cardstock;
+                var viewport;
+
+                var xoff = 0;
+                var yoff = 0;
+                var zidx = 0;
+
+                function addCard() {
+                    var card = cardstock.html();
+                    yoff = yoff + 2;
+                    xoff = xoff + 5;
+                    zidx = zidx + 1;
+                    var cid = 'card' + zidx;
+
+                    viewport.append(card);
+                    $('#TBD').attr('id', cid);
+                    cid = '#' + cid;
+
+                    $(cid).attr('margin-top', '' + yoff + 'em');
+                    $(cid).attr('margin-left', '' + xoff + 'em');
+                    $(cid).attr('z-index', zidx);
+                }
+
                 function pause () {
 
                 }
@@ -27,6 +50,11 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                     dispatcher.fire ('test', infoIn);
 
                     alert("Made it to ViewportView init()");
+
+                    cardstock = $('#cardstock').detach();
+                    viewport = $('#viewport');
+
+                    viewport.on('click', addCard);
                 }
 
                 // Public Interface
