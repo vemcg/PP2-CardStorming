@@ -6,6 +6,7 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
 
                 var cardstock;
                 var viewport;
+                var board;
 
                 var xoff = 0;
                 var yoff = 0;
@@ -14,17 +15,20 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                 function addCard() {
                     var card = cardstock.html();
                     yoff = yoff + 2;
-                    xoff = xoff + 5;
+                    xoff = xoff + 3;
                     zidx = zidx + 1;
                     var cid = 'card' + zidx;
 
-                    viewport.append(card);
+                    board.append(card);
                     $('#TBD').attr('id', cid);
                     cid = '#' + cid;
 
-                    $(cid).attr('margin-top', '' + yoff + 'em');
-                    $(cid).attr('margin-left', '' + xoff + 'em');
-                    $(cid).attr('z-index', zidx);
+                    board.css('top', yoff + 'px');
+                    board.css('left', -xoff + 'px');
+
+                    $(cid).css('top', '' + yoff + 'em');
+                    $(cid).css('left', '' + xoff + 'em');
+                    $(cid).css('z-index', zidx);
                 }
 
                 function pause () {
@@ -49,10 +53,11 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
 
                     dispatcher.fire ('test', infoIn);
 
-                    alert("Made it to ViewportView init()");
+                    // alert("Made it to ViewportView init()");
 
                     cardstock = $('#cardstock').detach();
                     viewport = $('#viewport');
+                    board = $('#board');
 
                     viewport.on('click', addCard);
                 }

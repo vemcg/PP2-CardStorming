@@ -13,10 +13,14 @@
                 background-color: #ddddff;
             }
             #viewport {
+                position:  relative;
                 height: 800px;
                 width: 75%;
                 float: left;
                 background-color: #ffddff;
+            }
+            #board {
+                position:  absolute;
             }
             #palette {
                 height: 800px;
@@ -25,7 +29,7 @@
                 background-color: #ffdddd;
             }
             .card {
-                /* position: absolute; */
+                position: absolute;
                 height: 6em;
                 width: 10em;
                 background-color: yellow;
@@ -42,7 +46,9 @@
         </div>
         <div>
             <div id="viewport">
-                blank viewport
+                <div id="board">
+                    blank viewport
+                </div>
             </div>
             <div id="palette">
                 blank palette

@@ -12,7 +12,7 @@ define(['jquery'],
                 }
 
                 function init() {
-                   alert("This is the init() of Palette.");
+                   // alert("This is the init() of Palette.");
                 }
 
                 // Public Interface

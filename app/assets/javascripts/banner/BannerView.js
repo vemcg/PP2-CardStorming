@@ -12,7 +12,7 @@ define(['jquery'],
                 }
 
                 function init() {
-                   alert("This is the init() of banner.");
+                   // alert("This is the init() of banner.");
                 }
 
                 // Public Interface
