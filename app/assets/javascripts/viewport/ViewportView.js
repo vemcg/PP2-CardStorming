@@ -8,6 +8,7 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                 var viewport;
                 var board;
 
+                var fontsize = 100;
                 var xoff = 0;
                 var yoff = 0;
                 var zidx = 0;
@@ -18,6 +19,9 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                     xoff = xoff + 3;
                     zidx = zidx + 1;
                     var cid = 'card' + zidx;
+
+                    fontsize = 0.90 * fontsize;
+                    board.css('font-size', fontsize + '%');
 
                     board.append(card);
                     $('#TBD').attr('id', cid);
