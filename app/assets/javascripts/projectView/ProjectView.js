@@ -14,6 +14,7 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                 var zidx = 0;
 
                 function addCard() {
+                    // TODO: Take the card from the event rather than creating it
                     var card = cardstock.html();
                     yoff = yoff + 2;
                     xoff = xoff + 3;
@@ -27,6 +28,7 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                     $('#TBD').attr('id', cid);
                     cid = '#' + cid;
 
+                    // TODO: Put the card where it was dropped
                     board.css('top', yoff + 'px');
                     board.css('left', -xoff + 'px');
 
@@ -54,12 +56,13 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                     dispatcher.on('test', t1);
                     dispatcher.on('test', t2);
                     dispatcher.on('test', t1);
+                    dispatcher.on('newCard', addCard);
 
                     dispatcher.fire ('test', infoIn);
 
                     // alert("Made it to ProjectView init()");
 
-                    cardstock = $('#cardstock').detach();
+                    cardstock = $('#cardstock');
                     projectView = $('#projectView');
                     board = $('#board');
 
