@@ -28,6 +28,6 @@ define(['path/to/xxx','path/to/yyy','jquery'],
         } ()); // End of Class
 
         // Choose either:
-        return new Sample(); // Returns an instance of Sample (a singleton)
-        // return Sample; // Returns Sample (a Constructor for multiple instances)
+        // return new Sample(); // Returns an instance (a singleton)
+        // return Sample; // Returns a Constructor for multiple instances
     });
