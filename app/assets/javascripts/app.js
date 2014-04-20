@@ -1,5 +1,5 @@
-define(['banner/BannerView', 'palette/PaletteView', 'viewport/ViewportView', 'jquery'],
-function (banner, palette, viewport) { "use strict"
+define(['banner/BannerView', 'palette/PaletteView', 'projectView/ProjectView', 'jquery'],
+function (banner, palette, projectView) { "use strict"
     var App = (function () {
 
         function App () {
@@ -7,7 +7,7 @@ function (banner, palette, viewport) { "use strict"
             function init() {
                 banner.init();
                 palette.init();
-                viewport.init();
+                projectView.init();
             }
 
             // Public Interface

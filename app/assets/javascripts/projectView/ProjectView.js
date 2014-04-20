@@ -1,11 +1,11 @@
 define(['core/EventDispatcher', 'core/Log', 'jquery'],
     function (dispatcher, logger) { "use strict"
-        var ViewportView = (function () { // Start of Constructor
+        var ProjectView = (function () { // Start of Constructor
 
-            function ViewportView () {
+            function ProjectView () {
 
                 var cardstock;
-                var viewport;
+                var projectView;
                 var board;
 
                 var fontsize = 100;
@@ -49,7 +49,7 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                     function t2(info) {
                         logger.log('T2: info.str = ' + info.str);
                     }
-                    logger.log('Hello raw Log from ViewportView');
+                    logger.log('Hello raw Log from ProjectView');
 
                     dispatcher.on('test', t1);
                     dispatcher.on('test', t2);
@@ -57,13 +57,13 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
 
                     dispatcher.fire ('test', infoIn);
 
-                    // alert("Made it to ViewportView init()");
+                    // alert("Made it to ProjectView init()");
 
                     cardstock = $('#cardstock').detach();
-                    viewport = $('#viewport');
+                    projectView = $('#projectView');
                     board = $('#board');
 
-                    viewport.on('click', addCard);
+                    projectView.on('click', addCard);
                 }
 
                 // Public Interface
@@ -71,8 +71,8 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                 this.resume = resume;
                 this.init = init;
             }   // End of Instance
-            return ViewportView;
+            return ProjectView;
         } ()); // End of Constructor
 
-        return new ViewportView();
+        return new ProjectView();
     });
