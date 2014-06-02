@@ -5,8 +5,8 @@ define(['path/to/xxx','path/to/yyy','jquery'],
             var classVariable = 84;
 
             function Sample () {
-                var publicInstanceMethod;
-                var privateInstanceVariable;
+                var publicVariable;
+                var privateVariable;
 
                 function privateMethod () {
 
