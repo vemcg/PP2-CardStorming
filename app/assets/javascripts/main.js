@@ -21,7 +21,6 @@
     function (app) { "use strict"
 
         $(document).ready(function () {
-            //app.sayHello();
             app.init();
         });
 

@@ -1,28 +1,21 @@
-define(['cards/CardStackView', 'core/EventDispatcher', 'jquery'],
-    function (CardStack, dispatcher) { "use strict"
+define(['cards/CardStackView', 'cards/CardView', 'core/EventDispatcher', 'jquery'],
+    function (CardStack, Card, dispatcher) { "use strict"
         var PaletteView = (function () {
 
             function PaletteView () {
 
-                function addCardStack(cardStackAttributes) {
-                    // add the cardStack to #palette
-                }
+                var palette;
 
-                function pause () {
-
-                }
-                function resume () {
-
-                }
+                function pause () {}
+                function resume () {}
 
                 function init() {
-                    // alert("This is the init() of Palette.");
-
-                    var cardStackAttributes = {
-                        purpose : 'demo',
-                        styling : 'tbdClassName'
+                    // Fake button push
+                    var demoCardStackAttributes = {
+                        purpose : 'Why This Card',
+                        styling : 'yellowCard'
                     };
-                    addCardStack(cardStackAttributes);
+                    dispatcher.fire('getNewCardStack', demoCardStackAttributes);
                 }
 
                 // Public Interface
@@ -33,6 +26,6 @@ define(['cards/CardStackView', 'core/EventDispatcher', 'jquery'],
             return PaletteView;
         } ()); // End of Class
 
-        return new PaletteView(); // Returns an instance (a singleton)
-        // return SampleInstance; // Returns a Constructor for multiple instances
-    });
+        return new PaletteView();
+    }
+);

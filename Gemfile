@@ -9,6 +9,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
+gem 'requirejs-rails'
 gem 'haml-rails'
 gem 'pg'
 group :development do

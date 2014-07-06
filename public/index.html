@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>CardStorming</title>
-		<style>
-			html * {
-				font-size: 100%;
-			}
-            #banner {
-                height:  100px;
-                width: 100%;
-                background-color: #ddddff;
-            }
-            #projectView {
-                position:  relative;
-                height: 800px;
-                width: 75%;
-                float: left;
-                background-color: #ffddff;
-            }
-            #board {
-                position:  absolute;
-            }
-            #palette {
-                height: 800px;
-                width: 25%;
-                float: right;
-                background-color: #ffdddd;
-            }
-            .hidden {
-                display: none !important;
-            }
-            .card {
-                position: absolute;
-                height: 6em;
-                width: 10em;
-                background-color: yellow;
-                border: black 1px solid;
-            }
-            .title {
-                width: 7em;
-                font-weight: bold;
-            }
-            .content {
-                width: 10em;
-                height:  5em;
-            }
-		</style>
-        <script data-main="assets/main" src="assets/require.js">
-</script>
+<head>
+    <meta charset="utf-8"/>
+    <title>CardStorming</title>
+    <style>
+        html * {
+            font-size: 100%;
+        }
+        #banner {
+            height: 100px;
+            width: 100%;
+            background-color: #ddddff;
+        }
+        #projectView {
+            position: relative;
+            height: 800px;
+            width: 75%;
+            float: left;
+            background-color: #ffddff;
+        }
+        #projectBoard {
+            position: absolute;
+        }
+        #palette {
+            height: 800px;
+            float: right;
+            background-color: #ffdddd;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .card {
+            position: absolute;
+            height: 6em;
+            width: 10em;
+            border: black 1px solid;
+        }
+        .yellowCard {
+            background-color: yellow;
+            border: black 1px solid;
+            opacity: 1;
+        }
+        .blankCard {
+            opacity: 0.1;
+        }
+        .cardStack {
+            margin: 10px;
+            height: 6em;
+            width: 10em;
+            border: black 3px solid;
+        }
+        .title {
+            width: 7em;
+            font-weight: bold;
+        }
+        .content {
+            width: 10em;
+            height: 5em;
+        }
+    </style>
+    <script data-main="assets/main" src="assets/require.js">
+    </script>
 
-	</head>
-	<body>
+</head>
+    <body>
 		<div id="banner">
             blank banner
         </div>
         <div>
             <div id="projectView">
-                <div id="board">
+                <div id="projectBoard">
                     blank projectView
                 </div>
             </div>
@@ -65,18 +77,6 @@
                 blank palette
             </div>
         </div>
-        <!-- Detachable Assets -->
-        <div class="hidden">
-            <div id="cardstock">
-                <div id="TBD" class="card">
-                    <div class="title">Title</div>
-                    <div class="content">content content content content</div>
-                </div>
-            </div>
-        </div>
-        <form>
-            <input type="text" class="title" name="title"><br>
-            <input type="textarea" class="content" name="content"><br>
-        </form>
+
 	</body>
 </html>

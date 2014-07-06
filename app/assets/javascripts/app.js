@@ -1,10 +1,11 @@
-define(['banner/BannerView', 'palette/PaletteView', 'projectView/ProjectView', 'jquery'],
-function (banner, palette, projectView) { "use strict"
+define(['banner/BannerView', 'palette/PaletteView', 'projectView/ProjectView', 'core/EventDispatcher','jquery'],
+function (banner, palette, projectView, eventDispatcher) { "use strict"
     var App = (function () {
 
         function App () {
 
             function init() {
+                // eventDispatcher.fire('set some breakpoints');
                 banner.init();
                 palette.init();
                 projectView.init();
