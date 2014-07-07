@@ -1,28 +1,31 @@
-define(['jquery'],
-    function () { "use strict"
+define(['cards/CardStackView', 'cards/CardView', 'core/EventDispatcher', 'jquery'],
+    function (CardStack, Card, dispatcher) { "use strict"
         var PaletteView = (function () {
 
             function PaletteView () {
 
-                function pause () {
+                var palette;
 
-                }
-                function resume () {
-
-                }
+                function pause () {}
+                function resume () {}
 
                 function init() {
-                   // alert("This is the init() of Palette.");
+                    // Fake button push
+                    var demoCardStackAttributes = {
+                        purpose : 'Why This Card',
+                        styling : 'yellowCard'
+                    };
+                    dispatcher.fire('getNewCardStack', demoCardStackAttributes);
                 }
 
                 // Public Interface
                 this.pause = pause;
                 this.resume = resume;
                 this.init = init;
-            }   // End of PaletteViewInstance
+            }   // End of Instance
             return PaletteView;
-        } ()); // End of ViewportViewClass
+        } ()); // End of Class
 
-        return new PaletteView(); // Returns and instance of SampleInstance (a singleton)
-        // return SampleInstance; // Returns SampleInstance (a Constructor for multiple instances)
-    });
+        return new PaletteView();
+    }
+);

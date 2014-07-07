@@ -1,47 +1,10 @@
-define(['core/EventDispatcher', 'core/Log', 'jquery'],
+define(['core/EventDispatcher', 'core/Log', 'cards/CardView', 'jquery'],
     function (dispatcher, logger) { "use strict"
         var ProjectView = (function () { // Start of Constructor
 
             function ProjectView () {
 
-                var cardstock;
-                var projectView;
-                var board;
-
-                var fontsize = 100;
-                var xoff = 0;
-                var yoff = 0;
-                var zidx = 0;
-
-                function addCard() {
-                    var card = cardstock.html();
-                    yoff = yoff + 2;
-                    xoff = xoff + 3;
-                    zidx = zidx + 1;
-                    var cid = 'card' + zidx;
-
-                    fontsize = 0.90 * fontsize;
-                    board.css('font-size', fontsize + '%');
-
-                    board.append(card);
-                    $('#TBD').attr('id', cid);
-                    cid = '#' + cid;
-
-                    board.css('top', yoff + 'px');
-                    board.css('left', -xoff + 'px');
-
-                    $(cid).css('top', '' + yoff + 'em');
-                    $(cid).css('left', '' + xoff + 'em');
-                    $(cid).css('z-index', zidx);
-                }
-
-                function pause () {
-
-                }
-                function resume () {
-
-                }
-                function init() {
+                function testEventDispatcher() {
                     var infoIn = {str : 'infoIn string'};
                     function t1 (info) {
                         logger.log('T1: info.str = ' + info.str);
@@ -56,14 +19,115 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
                     dispatcher.on('test', t1);
 
                     dispatcher.fire ('test', infoIn);
+                }
 
-                    // alert("Made it to ProjectView init()");
+                var cardstock;
+                var projectView;
+                var projectBoard;
 
-                    cardstock = $('#cardstock').detach();
-                    projectView = $('#projectView');
-                    board = $('#board');
+                var fontsize = 100;
+/*
+                var xoff = 0;
+                var yoff = 0;
+                var zidx = 0;
 
-                    projectView.on('click', addCard);
+                function addCard() {
+                    require(['text!templates/blankCard.html'],
+                        function(card) {
+                            yoff = yoff + 2;
+                            xoff = xoff + 3;
+                            zidx = zidx + 1;
+                            var cid = 'card' + zidx;
+
+                            fontsize = 0.90 * fontsize;
+                            board.css('font-size', fontsize + '%');
+
+                            board.append(card);
+                            $('#TBD').addClass('yellowCard');
+                            $('#TBD').removeClass('blankCard');
+                            $('#TBD').removeClass('hidden');
+                            $('#TBD').attr('id', cid);
+                            cid = '#' + cid;
+
+                            // TODO: Put the card where it was dropped
+                            board.css('top', yoff + 'px');
+                            board.css('left', -xoff + 'px');
+
+                            $(cid).css('top', '' + yoff + 'em');
+                            $(cid).css('left', '' + xoff + 'em');
+                            $(cid).css('z-index', zidx);
+                        }
+                    );
+                }
+
+                function addCardXXX() {       // do this differently on card drop
+                    // TODO: Take the card from the event rather than creating it
+                    var card = cardstock.html();
+                    yoff = yoff + 2;
+                    xoff = xoff + 3;
+                    zidx = zidx + 1;
+                    var cid = 'card' + zidx;
+
+                    fontsize = 0.90 * fontsize;
+                    board.css('font-size', fontsize + '%');
+
+                    board.append(card);
+                    $('#TBD').attr('id', cid);
+                    cid = '#' + cid;
+
+                    // TODO: Put the card where it was dropped
+                    board.css('top', yoff + 'px');
+                    board.css('left', -xoff + 'px');
+
+                    $(cid).css('top', '' + yoff + 'em');
+                    $(cid).css('left', '' + xoff + 'em');
+                    $(cid).css('z-index', zidx);
+                }
+
+                cardstock = $('#cardAsset');
+*/
+                projectView = $('#projectView');
+                projectBoard = $('#projectBoard');
+
+                function runOldClickDemo() {
+                    var cardAttributes = {
+                        purpose : 'Why This Card',
+                        styling : 'yellowCard',
+                        target  : '#projectBoard',
+                        x       :  1,
+                        y       :  1,
+                        z       :  1,
+                        creator : 'XX',
+                        title   : 'Card Title',
+                        content : 'Some card contents from a form in the future.'
+                    };
+
+                    function dropDemoCard() {
+                        cardAttributes.x = cardAttributes.x + 2;
+                        cardAttributes.y = cardAttributes.y + 3;
+                        cardAttributes.z = cardAttributes.z + 1;
+
+                        dispatcher.fire('getNewCard', cardAttributes);
+
+                        fontsize = 0.90 * fontsize;
+                        projectBoard.css('font-size', fontsize + '%');
+                        projectBoard.css('top', cardAttributes.y + 'px');
+                        projectBoard.css('left', -cardAttributes.x + 'px');
+                    }
+
+                    projectView.on('click', dropDemoCard);
+                }
+
+                function pause () {
+
+                }
+                function resume () {
+
+                }
+                function init() {
+                    logger.log("Made it to ProjectView init()");
+                    // testEventDispatcher();
+                    runOldClickDemo();
                 }
 
                 // Public Interface
@@ -75,4 +139,5 @@ define(['core/EventDispatcher', 'core/Log', 'jquery'],
         } ()); // End of Constructor
 
         return new ProjectView();
-    });
+    }
+);

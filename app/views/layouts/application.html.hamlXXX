@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title PP2Cardstorming
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #banner
+      blank banner
+    %div
+      #projectView
+        #board
+          blank projectView
+      #palette
+        blank palette
+    / Detachable Assets
+    #detachableAssets.hidden
+      #cardAsset
+        #TBD.blankCard.hidden
+          .title Title
+          .content content content content content
+      #cardStackAsset
+        #TBD.cardStack
+          .purpose Purpose
+      %form
+        %input.title{name: "title", type: "text"}/
+        %br/
+        %input.content{name: "content", type: "textarea"}/
+        %br/

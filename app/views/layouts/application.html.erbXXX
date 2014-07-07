@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PP2Cardstorming</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+    <body>
+        <div id="banner">
+          blank banner
+        </div>
+        <div>
+          <div id="projectView">
+            <div id="board">
+              blank projectView
+            </div>
+          </div>
+          <div id="palette">
+            blank palette
+          </div>
+        </div>
+        <!-- Detachable Assets -->
+        <div id="detachableAssets" class="hidden">
+          <div id="cardAsset">
+            <div id="TBD" class="blankCard hidden">
+              <div class="title">Title</div>
+              <div class="content">content content content content</div>
+            </div>
+          </div>
+          <div id="cardStackAsset">
+            <div id="TBD" class="cardStack">
+              <div class="purpose">Purpose</div>
+            </div>
+          </div>
+          <form>
+            <input type="text" class="title" name="title"><br>
+            <input type="textarea" class="content" name="content"><br>
+          </form>
+        </div>
+    </body>
+</html>
