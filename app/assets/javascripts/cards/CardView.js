@@ -51,6 +51,8 @@ define(['core/EventDispatcher', 'core/UniqueId', 'core/Log', 'jquery'],
                     $(cid).removeClass('hidden');
                 }
 
+
+
                 function init() {
                     dispatcher.on('getNewCard', createCard);
                 }

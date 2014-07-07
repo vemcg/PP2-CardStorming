@@ -15,3 +15,8 @@
 // // require vendor/require
 // require require
 // require_tree .
+
+//= jquery-ui/draggable
+//= jquery-ui/droppable
+//= jquery-ui/resizable
+
