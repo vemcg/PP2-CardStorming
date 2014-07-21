@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
+
+
+    <!-- CSS -->
+    <style type="text/css">
+    .square {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        text-align: center;
+        line-height: 50px;
+        float: left;
+        background-color: lightblue;
+        }
+
+    .squaredotted {
+        width: 200px;
+        height: 200px;
+        border: 1px dotted gray;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        text-align: center;
+        line-height: 50px;
+        float: left;
+        background-color: lightgray;
+        }
+    </style>
+
+
+    <!-- Javascript -->
+    <script>
+    $(function () {
+        $(".square").draggable();
+        $(".squaredotted").droppable({
+        drop: function (event, ui) {
+        $("#info").html("dropped!");
+        },
+    over: function (event, ui) {
+        $("#info").html("moving in!");
+        },
+    out: function (event, ui) {
+        $("#info").html("moving out!");
+        }
+    });
+    });
+    </script>

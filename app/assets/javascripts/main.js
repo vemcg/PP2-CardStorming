@@ -17,7 +17,7 @@
 });
 */
 //debugger;
-  require (["app", "jquery"],
+  require (["app", "jquery-ui", "jquery"],
     function (app) { "use strict"
 
         $(document).ready(function () {

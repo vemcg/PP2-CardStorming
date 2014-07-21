@@ -39,6 +39,7 @@ db/*.sqlite3
 # believed to be asset pipeline artifacts
 /public/assets/application-*
 /public/assets/require-*
+/public/assets/*
 
 # various artifacts
 **.war
