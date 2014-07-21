@@ -28,11 +28,8 @@ define(['core/EventDispatcher', 'core/UniqueId', 'core/Log', 'jquery'],
 
                             card.addClass(cardAttributes.styling);
                             card.removeClass('hidden');
+                            card.draggable();
 
-                            // card.draggable();
-
-                            // cardAttributes.cid = cid;
-                            // dispatcher.fire('cardAdded'); needed
                         }
                     );
                 }
@@ -49,6 +46,7 @@ define(['core/EventDispatcher', 'core/UniqueId', 'core/Log', 'jquery'],
                     $(cid).attr('top', $(csid).attr('top'));
                     $(cid).attr('left', $(csid).attr('left'));
                     $(cid).removeClass('hidden');
+                    $('.card').draggable();
                 }
 
 

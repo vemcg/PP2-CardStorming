@@ -18,8 +18,8 @@ define(['cards/CardView', 'core/EventDispatcher', 'core/UniqueId', 'core/Log', '
                             stack.addClass(csid);
                             stack.attr('id', csid);
 
-                            // TODO: Put a card in it
-                            // TODO: Later, take the card from the event rather than directly
+                            // Put a card in it
+                            //  Later, take the card from the event rather than directly
                             dispatcher.fire('getNewCard', cardStackAttributes);
                         }
                     );

@@ -26,7 +26,6 @@ define(['core/EventDispatcher', 'core/Log', 'cards/CardView', 'jquery'],
                 var projectBoard;
 
                 var fontsize = 100;
-/*
                 var xoff = 0;
                 var yoff = 0;
                 var zidx = 0;
